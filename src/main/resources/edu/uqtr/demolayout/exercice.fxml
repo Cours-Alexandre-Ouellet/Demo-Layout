@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Text?>
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="edu.uqtr.demolayout.ExerciceController"
+            stylesheets="@exercice.css">
+    <!--Section du haut-->
+    <top>
+        <AnchorPane fx:id="en_tete">    <!-- Permettra d'encrer les bouton connexione et quitter à droite -->
+            <padding>
+                <Insets top="10" left="10" right="10" bottom="10"/>
+            </padding>
+            <StackPane AnchorPane.leftAnchor="10" AnchorPane.topAnchor="10">  <!-- Empilement image et texte -->
+                <AnchorPane> <!-- Permet de décaler le texte par rapport à l'image -->
+                    <ImageView AnchorPane.topAnchor="0" AnchorPane.leftAnchor="0" fitWidth="100" fitHeight="100">
+                        <image>
+                            <Image url="@images/icone_monstre.png"/>
+                        </image>
+                    </ImageView>
+                    <Text fx:id="titre_fenetre" AnchorPane.topAnchor="20" AnchorPane.leftAnchor="50">Gestion monstres
+                    </Text>
+                </AnchorPane>
+            </StackPane>
+            <HBox alignment="CENTER_RIGHT" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0" spacing="10">
+                <Button styleClass="en_tete_action">Se connecter</Button>
+                <Button styleClass="en_tete_action" onAction="#quitter">Quitter</Button>
+            </HBox>
+        </AnchorPane>
+    </top>
+
+    <left>
+        <!-- Globalement le menu est vertical -->
+        <VBox alignment="TOP_LEFT" spacing="10" fx:id="menu">
+            <padding>
+                <Insets top="20" left="10" right="10"></Insets>
+            </padding>
+            <HBox alignment="CENTER">
+                <Text styleClass="titre_secondaire">Menu</Text>
+            </HBox>
+            <Text styleClass="categorie_menu">Création</Text>
+            <VBox alignment="TOP_CENTER" spacing="5"> <!-- On met un VBox dans un VBox pour permettre le décallement
+             on aurait pu utiliser un autre conteneur. -->
+                <padding>
+                    <Insets left="20"/>
+                </padding>
+                <Button styleClass="menu_action">Ajouter une famille</Button>
+                <Button styleClass="menu_action">Ajouter un monstre</Button>
+                <Button styleClass="menu_action">Former un groupe</Button>
+            </VBox>
+            <Text styleClass="categorie_menu">Assignation</Text>
+            <VBox alignment="TOP_CENTER" spacing="5">
+                <padding>
+                    <Insets left="20"/>
+                </padding>
+                <Button styleClass="menu_action">Assigner des patrouilles</Button>
+                <Button styleClass="menu_action">Former une expédition</Button>
+                <Button styleClass="menu_action">Gérer la maintenance</Button>
+            </VBox>
+        </VBox>
+    </left>
+
+    <center>
+        <!-- Globalement la zone de travail est verticale -->
+        <VBox fx:id="zone_travail" alignment="TOP_LEFT" spacing="10">
+            <padding>
+                <Insets top="10" bottom="10" left="10" right="10"/>
+            </padding>
+            <!-- On remarque que les boutons ne sont pas tous de la même grandeur et s'étalent sur 2 ligne -->
+            <FlowPane orientation="HORIZONTAL" hgap="10" vgap="2">
+                <Button styleClass="outil_action">Nouveau</Button>
+                <Button styleClass="outil_action">Dupliquer</Button>
+                <Button styleClass="outil_action">Charger</Button>
+                <Button styleClass="outil_action">Sauvegarder</Button>
+                <Button styleClass="outil_action">Ouvrir</Button>
+                <Button styleClass="outil_action">Fermer</Button>
+                <Button styleClass="outil_action">Fiche précédente</Button>
+                <Button styleClass="outil_action">Fiche suivante</Button>
+            </FlowPane>
+
+            <Separator></Separator>
+
+            <!-- Une grille est très souvent utilisée pour aligner les formulaires -->
+            <GridPane vgap="5" hgap="10">
+                <Label textAlignment="LEFT"
+                       GridPane.rowIndex="0" GridPane.columnIndex="0">Nom :
+                </Label>
+                <TextField GridPane.rowIndex="0" GridPane.columnIndex="1"></TextField>
+
+                <Label textAlignment="LEFT"
+                       GridPane.rowIndex="1" GridPane.columnIndex="0">Famille :
+                </Label>
+                <TextField GridPane.rowIndex="1" GridPane.columnIndex="1"></TextField>
+
+                <Label textAlignment="LEFT"
+                       GridPane.rowIndex="2" GridPane.columnIndex="0">Point de santé :
+                </Label>
+                <TextField GridPane.rowIndex="2" GridPane.columnIndex="1"></TextField>
+
+                <Label textAlignment="LEFT"
+                       GridPane.rowIndex="3" GridPane.columnIndex="0">Arme :
+                </Label>
+                <TextField GridPane.rowIndex="3" GridPane.columnIndex="1"></TextField>
+            </GridPane>
+
+            <!-- On aurait pu utilisé un AnchorPane global, mais ici on a vraiment juste besoin des fonctionnalités
+            d'ancre pour ces deux boutons -->
+            <AnchorPane>
+                <HBox AnchorPane.bottomAnchor="0" AnchorPane.rightAnchor="10"
+                      spacing="10">
+                    <Button styleClass="form_action">Valider</Button>
+                    <Button styleClass="form_action">Réinitialiser</Button>
+                </HBox>
+            </AnchorPane>
+        </VBox>
+    </center>
+</BorderPane>
