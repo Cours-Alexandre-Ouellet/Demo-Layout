@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Text?>
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="edu.uqtr.demolayout.LayoutController"
+      alignment="CENTER">
+
+    <HBox alignment="CENTER">
+        <GridPane hgap="20" vgap="20">
+
+            <HBox GridPane.columnIndex="0" GridPane.rowIndex="0" GridPane.columnSpan="2" alignment="CENTER">
+                <Text textAlignment="CENTER">Sélectionner le layout à faire afficher.
+                </Text>
+            </HBox>
+
+            <Button onAction="#afficherExemple" userData="VBOX_HBOX"
+                    GridPane.columnIndex="0" GridPane.rowIndex="1" minWidth="200">VBox/HBox
+            </Button>
+
+            <Button onAction="#afficherExemple" userData="STACK"
+                    GridPane.columnIndex="1" GridPane.rowIndex="1" minWidth="200">StackPane
+            </Button>
+
+            <Button onAction="#afficherExemple" userData="FLOW" minWidth="200"
+                    GridPane.columnIndex="0" GridPane.rowIndex="2">FlowPane
+            </Button>
+
+            <Button onAction="#afficherExemple" userData="GRID" minWidth="200"
+                    GridPane.columnIndex="1" GridPane.rowIndex="2">GridPane
+            </Button>
+
+            <Button onAction="#afficherExemple" userData="BORDER" minWidth="200"
+                    GridPane.columnIndex="0" GridPane.rowIndex="3">BorderPane
+            </Button>
+
+            <Button onAction="#afficherExemple" userData="ANCHOR" minWidth="200"
+                    GridPane.columnIndex="1" GridPane.rowIndex="3">AnchorPane
+            </Button>
+
+            <HBox GridPane.columnIndex="0" GridPane.rowIndex="4"
+                  GridPane.columnSpan="2" alignment="CENTER">
+                <VBox alignment="TOP_CENTER">
+                    <Text fx:id="message_exercice">Le solutionnaire sera publié jeudi.</Text>
+                    <Button fx:id="bouton_exerice" onAction="#afficherExemple"
+                            disable="true" userData="EXEMPLE_COMPLET" minWidth="200">
+                        Exercice
+                    </Button>
+                </VBox>
+            </HBox>
+        </GridPane>
+    </HBox>
+
+</VBox>

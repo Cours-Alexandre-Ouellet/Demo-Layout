@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.Text?>
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="edu.uqtr.demolayout.LayoutController"
+            stylesheets="@styles.css">
+    <top>
+        <AnchorPane>
+            <padding>
+                <Insets top="20" left="20" right="20" bottom="20"></Insets>
+            </padding>
+            <Text wrappingWidth="800" textAlignment="JUSTIFY">Le BorderPane définit 5 régions dans lesquelles placer des
+                éléments. Ces régions sont Top, Center, Left, Right et Bottom. On indique la région avec une balise
+                enfant en lettre minusucle dans le BorderPane. C'est un layout très utilisé pour former la base des
+                fenêtres. La taille de chaque section dépend de son contenu et de celui des autres sections et des
+                propriétés "maxWidth", "minWidth", "maxHeight" et "minHeight" du BorderPane.
+                <AnchorPane.topAnchor>0</AnchorPane.topAnchor>
+                <AnchorPane.leftAnchor>0</AnchorPane.leftAnchor>
+            </Text>
+
+            <Button onAction="#afficherExemple" userData="MENU">Retour au menu
+                <AnchorPane.rightAnchor>0</AnchorPane.rightAnchor>
+                <AnchorPane.bottomAnchor>0</AnchorPane.bottomAnchor>
+            </Button>
+
+        </AnchorPane>
+    </top>
+    <center>
+        <HBox alignment="CENTER">
+           <BorderPane minWidth="800" maxHeight="600" styleClass="bordure">
+               <top>
+                   <StackPane alignment="CENTER">
+                       <Rectangle height="50" width="600" fill="cyan"></Rectangle>
+                       <Text styleClass="titre_exemple">SECTION TOP</Text>
+                   </StackPane>
+               </top>
+               <left>
+                   <StackPane alignment="CENTER">
+                       <Rectangle height="500" width="100" fill="lightcoral"></Rectangle>
+                       <Text styleClass="titre_exemple">SECTION LEFT</Text>
+                   </StackPane>
+               </left>
+               <center>
+                       <Text styleClass="titre_exemple">SECTION CENTER</Text>
+               </center>
+               <right>
+                   <StackPane alignment="CENTER">
+                       <Rectangle height="500" width="100" fill="lightcoral"></Rectangle>
+                       <Text styleClass="titre_exemple">SECTION RIGHT</Text>
+                   </StackPane>
+               </right>
+               <bottom>
+                   <StackPane alignment="CENTER">
+                       <Rectangle height="50" width="500" fill="cyan"></Rectangle>
+                       <Text styleClass="titre_exemple">SECTION BOTTOM</Text>
+                   </StackPane>
+               </bottom>
+           </BorderPane>
+        </HBox>
+    </center>
+</BorderPane>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.Text?>
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="edu.uqtr.demolayout.LayoutController"
+            stylesheets="@styles.css">
+    <top>
+        <AnchorPane>
+            <padding>
+                <Insets top="20" left="20" right="20" bottom="20"></Insets>
+            </padding>
+            <Text wrappingWidth="800" textAlignment="JUSTIFY">Le StackPane permet d'empiler des objets dans un
+                layout (à la façon d'une stack). L'empilage se fait sur l'axe de profondeur. Les premiers objets
+                sont dans le fond de la stack, les derniers sur le dessus. Ce layout est utile pour superposer du texte
+                sur une image par exemple.
+
+                On peut modifier la propriété "alignement" pour modifier la façon dont les éléments s'empilent. Les
+                valeurs
+                sont les mêmes que le VBox / HBox
+                <AnchorPane.topAnchor>0</AnchorPane.topAnchor>
+                <AnchorPane.leftAnchor>0</AnchorPane.leftAnchor>
+            </Text>
+
+            <Button onAction="#afficherExemple" userData="MENU">Retour au menu
+                <AnchorPane.rightAnchor>0</AnchorPane.rightAnchor>
+                <AnchorPane.bottomAnchor>0</AnchorPane.bottomAnchor>
+            </Button>
+
+        </AnchorPane>
+    </top>
+    <center>
+        <HBox alignment="CENTER">
+            <GridPane vgap="20" hgap="20">
+
+                <padding>
+                    <Insets top="20" left="20" right="20" bottom="20"></Insets>
+                </padding>
+
+                <VBox alignment="TOP_LEFT" styleClass="enEvidence" spacing="10">
+                    <padding>
+                        <Insets bottom="20" top="20" left="20" right="20"></Insets>
+                    </padding>
+                    <GridPane.rowIndex>0</GridPane.rowIndex>
+                    <GridPane.columnIndex>0</GridPane.columnIndex>
+
+                    <Text styleClass="titre_exemple">StackPane de base</Text>
+                    <StackPane styleClass="bordure">
+                        <Rectangle width="100" height="100" fill="green"></Rectangle>
+                        <Rectangle width="75" height="75" fill="black"></Rectangle>
+                        <Rectangle width="50" height="50" fill="darkred"></Rectangle>
+                    </StackPane>
+
+                </VBox>
+
+                <VBox alignment="TOP_CENTER" styleClass="enEvidence" spacing="10">
+                    <padding>
+                        <Insets bottom="20" top="20" left="20" right="20"></Insets>
+                    </padding>
+                    <GridPane.rowIndex>0</GridPane.rowIndex>
+                    <GridPane.columnIndex>1</GridPane.columnIndex>
+
+                    <Text styleClass="titre_exemple">StackPane aligné en haut à gauche</Text>
+                    <StackPane alignment="TOP_LEFT" styleClass="bordure">
+                        <Rectangle width="100" height="100" fill="green"></Rectangle>
+                        <Rectangle width="75" height="75" fill="black"></Rectangle>
+                        <Rectangle width="50" height="50" fill="darkred"></Rectangle>
+                    </StackPane>
+
+                </VBox>
+            </GridPane>
+        </HBox>
+    </center>
+</BorderPane>

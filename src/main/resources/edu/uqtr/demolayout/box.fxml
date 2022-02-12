@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.Text?>
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="edu.uqtr.demolayout.LayoutController"
+            stylesheets="@styles.css">
+    <top>
+        <AnchorPane>
+            <padding>
+                <Insets top="20" left="20" right="20" bottom="20"></Insets>
+            </padding>
+            <Text wrappingWidth="800" textAlignment="JUSTIFY">Les VBox et HBox permettent d'empiler des objets
+                verticalement ou horizontalement. La propriété "alignement" détermine comment ils sont remplis et
+                la propriété "spacing" l'espacement entre les éléments.
+
+                L'alignement peut se faire verticalement (TOP, CENTER, BOTTOM) et horizontalement (LEFT, CENTER, RIGHT).
+                Pour aligner en haut à droite par exemple on utilise "TOP_RIGHT".
+                <AnchorPane.topAnchor>0</AnchorPane.topAnchor>
+                <AnchorPane.leftAnchor>0</AnchorPane.leftAnchor>
+            </Text>
+
+            <Button onAction="#afficherExemple" userData="MENU">Retour au menu
+                <AnchorPane.rightAnchor>0</AnchorPane.rightAnchor>
+                <AnchorPane.bottomAnchor>0</AnchorPane.bottomAnchor>
+            </Button>
+
+        </AnchorPane>
+    </top>
+    <center>
+        <HBox alignment="CENTER">
+            <GridPane vgap="20" hgap="20">
+
+                <padding>
+                    <Insets top="20" left="20" right="20" bottom="20"></Insets>
+                </padding>
+
+                <VBox alignment="TOP_LEFT" styleClass="enEvidence" spacing="10">
+                    <GridPane.rowIndex>0</GridPane.rowIndex>
+                    <GridPane.columnIndex>0</GridPane.columnIndex>
+
+                    <Text styleClass="titre_exemple">VBox aligné à gauche en haut.</Text>
+                    <VBox alignment="TOP_LEFT" styleClass="bordure">
+                        <Rectangle width="100" height="100" fill="green"></Rectangle>
+                        <Rectangle width="100" height="100" fill="black"></Rectangle>
+                        <Rectangle width="100" height="100" fill="darkred"></Rectangle>
+                    </VBox>
+
+                </VBox>
+
+                <VBox alignment="TOP_CENTER" styleClass="enEvidence" spacing="10">
+                    <padding>
+                        <Insets bottom="20"></Insets>
+                    </padding>
+                    <GridPane.rowIndex>0</GridPane.rowIndex>
+                    <GridPane.columnIndex>1</GridPane.columnIndex>
+
+                    <Text styleClass="titre_exemple">VBox aligné centré en haut avec espacement de 10</Text>
+                    <VBox alignment="TOP_CENTER" spacing="10" styleClass="bordure">
+                        <Rectangle width="100" height="100" fill="green"></Rectangle>
+                        <Rectangle width="100" height="100" fill="black"></Rectangle>
+                        <Rectangle width="100" height="100" fill="darkred"></Rectangle>
+                    </VBox>
+
+                </VBox>
+
+                <VBox alignment="TOP_CENTER" styleClass="enEvidence" spacing="10">
+                    <padding>
+                        <Insets bottom="20"></Insets>
+                    </padding>
+                    <GridPane.rowIndex>0</GridPane.rowIndex>
+                    <GridPane.columnIndex>2</GridPane.columnIndex>
+
+                    <Text styleClass="titre_exemple">HBox aligné à droite avec espacement de 5</Text>
+                    <HBox alignment="CENTER_RIGHT" spacing="5" fillHeight="true" styleClass="bordure">
+                        <Rectangle width="100" height="100" fill="green"></Rectangle>
+                        <Rectangle width="100" height="100" fill="black"></Rectangle>
+                        <Rectangle width="100" height="100" fill="darkred"></Rectangle>
+                    </HBox>
+
+                </VBox>
+            </GridPane>
+        </HBox>
+    </center>
+</BorderPane>

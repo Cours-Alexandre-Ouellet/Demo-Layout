@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.Text?>
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="edu.uqtr.demolayout.LayoutController"
+            stylesheets="@styles.css">
+    <top>
+        <AnchorPane>
+            <padding>
+                <Insets top="20" left="20" right="20" bottom="20"></Insets>
+            </padding>
+            <Text wrappingWidth="800" textAlignment="JUSTIFY">Le FlowPane permet d'empiler des objets à la façon des
+                HBox ou VBox avec une nuance. Lorsque plein, les HBox/VBox peuvent déborder ou masquer des éléments. Les
+                FlowPane eux reportent les éléments sur la ligne ou colonne suivante. Ils sont donc très utiles pour
+                gérer l'affichage d'éléments dont le nombre peuvent changer ou pour s'adapter à un redimensionnement. On
+                limite la hauteur ou la largeur avec les propriétés "maxHeight" ou "maxWidth". Passé la largeur
+                maximale, le FlowPane continue de se remplir sur la ligne ou colonne suivante. L'orientation du FlowPane
+                est définit par la propriété "orientation". Les propriétés "vgap" et "hgap" permettent d'indiquer un
+                espacement vertical ou horizontal entre les éléments.
+                <AnchorPane.topAnchor>0</AnchorPane.topAnchor>
+                <AnchorPane.leftAnchor>0</AnchorPane.leftAnchor>
+            </Text>
+
+            <Button onAction="#afficherExemple" userData="MENU">Retour au menu
+                <AnchorPane.rightAnchor>0</AnchorPane.rightAnchor>
+                <AnchorPane.bottomAnchor>0</AnchorPane.bottomAnchor>
+            </Button>
+
+        </AnchorPane>
+    </top>
+    <center>
+        <HBox alignment="CENTER">
+            <GridPane vgap="20" hgap="20">
+
+                <padding>
+                    <Insets top="20" left="20" right="20" bottom="20"></Insets>
+                </padding>
+
+                <VBox alignment="TOP_LEFT" styleClass="enEvidence" spacing="10">
+                    <padding>
+                        <Insets bottom="20" top="20" left="20" right="20"></Insets>
+                    </padding>
+                    <GridPane.rowIndex>0</GridPane.rowIndex>
+                    <GridPane.columnIndex>0</GridPane.columnIndex>
+
+                    <Text styleClass="titre_exemple">FlowPane horizontal limité à 220 px</Text>
+                    <FlowPane maxWidth="220" styleClass="bordure">
+                        <Rectangle width="100" height="100" fill="green"></Rectangle>
+                        <Rectangle width="100" height="100" fill="black"></Rectangle>
+                        <Rectangle width="100" height="100" fill="darkred"></Rectangle>
+                    </FlowPane>
+
+                </VBox>
+
+                <VBox alignment="TOP_LEFT" styleClass="enEvidence" spacing="10">
+                    <padding>
+                        <Insets bottom="20" top="20" left="20" right="20"></Insets>
+                    </padding>
+                    <GridPane.rowIndex>0</GridPane.rowIndex>
+                    <GridPane.columnIndex>1</GridPane.columnIndex>
+
+                    <Text styleClass="titre_exemple" wrappingWidth="250">FlowPane horizontal limité à 200 px avec un
+                        espacement horizontal de 120px.
+                    </Text>
+                    <FlowPane maxWidth="200" hgap="120" styleClass="bordure">
+                        <Rectangle width="100" height="100" fill="green"></Rectangle>
+                        <Rectangle width="100" height="100" fill="black"></Rectangle>
+                        <Rectangle width="100" height="100" fill="darkred"></Rectangle>
+                    </FlowPane>
+
+                </VBox>
+
+                <VBox alignment="TOP_LEFT" styleClass="enEvidence" spacing="10">
+                    <padding>
+                        <Insets bottom="20" top="20" left="20" right="20"></Insets>
+                    </padding>
+                    <GridPane.rowIndex>1</GridPane.rowIndex>
+                    <GridPane.columnIndex>0</GridPane.columnIndex>
+                    <GridPane.columnSpan>2</GridPane.columnSpan>
+
+                    <Text styleClass="titre_exemple" wrappingWidth="250">FlowPane vertical limité à 220 px avec un
+                        espacement horizontal et vertical de 10px.
+                    </Text>
+                    <FlowPane maxHeight="220" hgap="10" vgap="10" orientation="VERTICAL" styleClass="bordure">
+                        <Rectangle width="100" height="100" fill="green"></Rectangle>
+                        <Rectangle width="100" height="100" fill="black"></Rectangle>
+                        <Rectangle width="100" height="100" fill="darkred"></Rectangle>
+                        <Rectangle width="100" height="100" fill="green"></Rectangle>
+                        <Rectangle width="100" height="100" fill="black"></Rectangle>
+                        <Rectangle width="100" height="100" fill="darkred"></Rectangle>
+                    </FlowPane>
+
+                </VBox>
+            </GridPane>
+        </HBox>
+    </center>
+</BorderPane>

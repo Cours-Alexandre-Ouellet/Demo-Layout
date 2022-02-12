@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Text?>
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="edu.uqtr.demolayout.LayoutController"
+            stylesheets="@styles.css">
+    <top>
+        <AnchorPane>
+            <padding>
+                <Insets top="20" left="20" right="20" bottom="20"></Insets>
+            </padding>
+            <Text wrappingWidth="800" textAlignment="JUSTIFY">Le AnchorPane permet de définir une ancre pour chaque
+                élément. L'ancre est un point de référence où l'élément sera attachée. Les 4 références possibles pour
+                une ancre sont top, left, right et bottom.
+                De façon semblable au GridPane, on indique dans l'enfant comment il s'ancre par rapport au AnchorPane.
+                Par exemple pour ancrer un élément à 5 pixels du haut on utilise "AnchorPane.topAnchor="5"".
+                <AnchorPane.topAnchor>0</AnchorPane.topAnchor>
+                <AnchorPane.leftAnchor>0</AnchorPane.leftAnchor>
+            </Text>
+
+            <Button onAction="#afficherExemple" userData="MENU">Retour au menu
+                <AnchorPane.rightAnchor>0</AnchorPane.rightAnchor>
+                <AnchorPane.bottomAnchor>0</AnchorPane.bottomAnchor>
+            </Button>
+
+        </AnchorPane>
+    </top>
+    <center>
+        <HBox alignment="CENTER">
+            <GridPane vgap="20" hgap="20">
+
+                <padding>
+                    <Insets top="20" left="20" right="20" bottom="20"></Insets>
+                </padding>
+
+                <VBox alignment="TOP_LEFT" styleClass="enEvidence" spacing="10">
+                    <padding>
+                        <Insets bottom="20" top="20" left="20" right="20"></Insets>
+                    </padding>
+                    <GridPane.rowIndex>0</GridPane.rowIndex>
+                    <GridPane.columnIndex>0</GridPane.columnIndex>
+
+                    <Text styleClass="titre_exemple" wrappingWidth="300">AnchorPane avec des éléments ancrés dans chaque
+                        coin. L'élément en bas à droite à une marge de 10px
+                    </Text>
+                    <AnchorPane minWidth="300" minHeight="300" styleClass="bordure">
+                        <Rectangle width="50" height="50" AnchorPane.leftAnchor="0" AnchorPane.topAnchor="0"
+                                   fill="green"></Rectangle>
+                        <Rectangle width="50" height="50" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0"
+                                   fill="black"></Rectangle>
+                        <Rectangle width="50" height="50" AnchorPane.leftAnchor="0" AnchorPane.bottomAnchor="0"
+                                   fill="darkred"></Rectangle>
+                        <Rectangle width="50" height="50" AnchorPane.bottomAnchor="10" AnchorPane.rightAnchor="10"
+                                   fill="cadetblue"></Rectangle>
+                    </AnchorPane>
+                </VBox>
+            </GridPane>
+        </HBox>
+    </center>
+</BorderPane>
