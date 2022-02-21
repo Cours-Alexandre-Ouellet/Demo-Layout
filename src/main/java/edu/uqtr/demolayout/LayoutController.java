@@ -34,8 +34,6 @@ public class LayoutController {
      * @param nomFichier le nom du fichier à charger
      */
     private void chargerContenu(String nomFichier) {
-        nomFichier = nomFichier;
-
         try {
             Parent racine = FXMLLoader.load(getClass().getResource(nomFichier));
             DemoLayoutApplication.getInstance().getStage().getScene().setRoot(racine);

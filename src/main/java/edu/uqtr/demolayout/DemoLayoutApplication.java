@@ -23,7 +23,7 @@ public class DemoLayoutApplication extends Application {
         this.stage = stage;
 
         FXMLLoader fxmlLoader = new FXMLLoader(DemoLayoutApplication.class.getResource("layout_controller.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 1000, 1000);
+        Scene scene = new Scene(fxmlLoader.load(), 1000, 700);
         stage.setTitle("Demo des layouts");
         stage.setScene(scene);
         stage.show();
