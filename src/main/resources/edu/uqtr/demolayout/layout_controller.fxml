@@ -43,9 +43,8 @@
             <HBox GridPane.columnIndex="0" GridPane.rowIndex="4"
                   GridPane.columnSpan="2" alignment="CENTER">
                 <VBox alignment="TOP_CENTER">
-                    <Text fx:id="message_exercice">Le solutionnaire sera publié jeudi.</Text>
                     <Button fx:id="bouton_exerice" onAction="#afficherExemple"
-                            disable="true" userData="EXEMPLE_COMPLET" minWidth="200">
+                            userData="EXEMPLE_COMPLET" minWidth="200">
                         Exercice
                     </Button>
                 </VBox>
