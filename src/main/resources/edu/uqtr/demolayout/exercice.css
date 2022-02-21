@@ -1,0 +1,31 @@
+#en_tete, #menu {
+    -fx-background-color: lightblue;
+}
+#en_tete {
+    -fx-border-width: 0 0 2 0;
+    -fx-border-style: solid;
+}
+#titre_fenetre {
+    -fx-font-size: 32pt;
+    -fx-font-weight: bold;
+}
+.en_tete_action {
+    -fx-min-width: 150px;
+    -fx-font-size: 10pt;
+}
+.titre_secondaire {
+    -fx-font-size: 16pt;
+    -fx-font-weight: bold;
+}
+.categorie_menu {
+    -fx-font-size: 12pt;
+    -fx-underline: true;
+}
+.menu_action {
+    -fx-min-width: 225px;
+    -fx-font-size: 10pt;
+}
+.outil_action {
+    -fx-font-size: 10pt;
+    -fx-min-width: 100px;
+}
